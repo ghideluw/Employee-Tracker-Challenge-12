@@ -1,5 +1,5 @@
 // require in inquirer library and connection to database
-const inquirer = require("inquirer");installi
+const inquirer = require("inquirer");
 const db = require('./db/connection');
 
 // connect to the database to the server
@@ -192,7 +192,7 @@ var employee_tracker = function () {
                         }
                     }
 
-                    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [answers.firstName, answers.lastName, role.id, answers.manager.id], (err, result) => {
+                    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_name) VALUES (?, ?, ?, ?)`, [answers.firstName, answers.lastName, role.id, answers.managerName], (err, result) => {
                         if (err) throw err;
                         console.log(`Added ${answers.firstName} ${answers.lastName} to the database.`)
                         employee_tracker();
