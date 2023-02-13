@@ -23,7 +23,8 @@ In order to install inquirer, please use npm i
 After installing the required dependiencies, run "node index.js" in the terminal to start the application. In the terminal the user is required to
 input the information requested and follow the prompts to generate the data which will display in table format.
 
-##SCREENSHOT ![image](https://user-images.githubusercontent.com/111549689/218290927-c1dd0f01-c72e-474b-81bd-9cc9ea96d555.png)
+##SCREENSHOT ![image](https://user-images.githubusercontent.com/111549689/218364590-33deffe9-fa71-412b-a7d5-2b67e2e7140f.png)
+
 
 
 ## License
