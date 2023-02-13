@@ -174,7 +174,7 @@ var employee_tracker = function () {
                         // prompt user input for employees respective manager
                         type: 'input',
                         name: 'manager',
-                        message: 'Who is the employees manager?',
+                        message: 'What is the employees manager id?',
                         validate: managerInput => {
                             if (managerInput) {
                                 return true;
@@ -186,13 +186,15 @@ var employee_tracker = function () {
                     }
                 ]).then((answers) => {
                     // store inputted values from answers into a variable
+                    console.log(answers)
+                    console.log(parseInt(answers.manager))
                     for (var i = 0; i < result.length; i++) {
                         if (result[i].title === answers.role) {
                             var role = result[i];
                         }
                     }
 
-                    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_name) VALUES (?, ?, ?, ?)`, [answers.firstName, answers.lastName, role.id, answers.managerName], (err, result) => {
+                    db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)`, [answers.firstName, answers.lastName, role.id, parseInt(answers.manager)], (err, result) => {
                         if (err) throw err;
                         console.log(`Added ${answers.firstName} ${answers.lastName} to the database.`)
                         employee_tracker();
